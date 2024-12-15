@@ -33,6 +33,8 @@ urlpatterns = [
     path('add_course_save', HodViews.add_course_save),
     path('add_course', HodViews.add_course, name="add_course"),
     path('scanner', HodViews.scanner, name="scanner"),
-    path('viewusers', views.viewusers),
-    path('viewcourses', views.viewcourses),
+    path('viewusers', HodViews.viewusers),
+    path('viewcourses', HodViews.viewcourses),
+    path('deleteprofile/<int:id>', HodViews.deleteprofile),
+    path('deletecourse/<int:id>', HodViews.deletecourse)
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

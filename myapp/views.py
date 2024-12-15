@@ -1,12 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-import json
 from myapp.models import Users, Courses
-from django.utils.timezone import now
 
 
 def showDemoPage(request):
@@ -35,11 +31,3 @@ def logout_user(request):
 
 def register(request):
     return render(request, "registration.html")
-
-def viewusers(request):
-    user = Users.objects.all()
-    return render(request, "viewusers.html", {'userdata': user})
-
-def viewcourses(request):
-    courses = Courses.objects.all()
-    return render(request, "viewcourses.html", {'userdata': courses})

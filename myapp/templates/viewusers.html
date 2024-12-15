@@ -25,7 +25,7 @@ Students
                 <td>{{ us.email }}</td>
                 <td>{{ us.device }}</td>
                 <td>
-                    <span>Edit</span><span>Delete</span>
+                    <a href="/deleteprofile/{{ us.id }}"> Delete </a>
                 </td>
             </tr>
         {% endfor %}

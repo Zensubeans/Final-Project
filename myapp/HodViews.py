@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from myapp.models import Role, Users, Courses, Scan
 from django.contrib import messages
@@ -42,3 +42,21 @@ def add_course_save(request):
 
 def scanner(request):
     return render(request, "hod_template/scanner.html")
+
+def viewusers(request):
+    user = Users.objects.all()
+    return render(request, "viewusers.html", {'userdata': user})
+
+def viewcourses(request):
+    courses = Courses.objects.all()
+    return render(request, "viewcourses.html", {'userdata': courses})
+
+def deleteprofile(request, id):
+    us = Users.objects.get(id=id)
+    us.delete()
+    return redirect("/viewusers")
+
+def deletecourse(request, id):
+    us = Courses.objects.get(id=id)
+    us.delete()
+    return redirect("/viewcourses")

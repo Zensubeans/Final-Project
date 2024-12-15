@@ -21,7 +21,7 @@ Courses
                 <td>{{ us.id }}</td>
                 <td>{{ us.course_name }}</td>
                 <td>
-                    <span>Edit</span><span>Delete</span>
+                    <a href="/deletecourse/{{ us.id }}"> Delete </a>
                 </td>
             </tr>
         {% endfor %}
