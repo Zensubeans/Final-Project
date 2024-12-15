@@ -35,16 +35,20 @@ Add Student
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
-                                <select class="form-control" aria-placeholder="Student or Admin" name="role">
+                                <select class="form-control" name="role">
                                   <option value="1">Student</option>
                                   <option value="2">Admin</option>
                                 </select>
                             </div>
+
                             <div class="form-group">
                                 {% if messages %}
                                   {% for message in messages %}
                                   {% if message.tags == 'error' %}
                                   <div class="alert alert-danger" style="margin-top: 10px;">{{ message }}</div>
+                                  {% endif %}
+                                  {% if message.tags == 'success' %}
+                                  <div class="alert alert-success" style="margin-top: 10px;">{{ message }}</div>
                                   {% endif %}
                                   {% endfor %}
                                 {% endif %}

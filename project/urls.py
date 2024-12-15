@@ -25,7 +25,7 @@ urlpatterns = [
     path('demo', views.showDemoPage),
     path('', views.showLoginPage),
     path('doLogin', views.doLogin),
-    path('register', views.register, name="register"),
+    path('register', views.register),
     path('logout_user', views.logout_user),
     path('admin_home', HodViews.admin_home, name="admin_home"),
     path('add_student', HodViews.add_student, name='add_student'),
@@ -33,4 +33,6 @@ urlpatterns = [
     path('add_course_save', HodViews.add_course_save),
     path('add_course', HodViews.add_course, name="add_course"),
     path('scanner', HodViews.scanner, name="scanner"),
+    path('viewusers', views.viewusers),
+    path('viewcourses', views.viewcourses),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

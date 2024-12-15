@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
-from myapp.models import Users
+from myapp.models import Users, Courses
 from django.utils.timezone import now
 
 
@@ -35,3 +35,11 @@ def logout_user(request):
 
 def register(request):
     return render(request, "registration.html")
+
+def viewusers(request):
+    user = Users.objects.all()
+    return render(request, "viewusers.html", {'userdata': user})
+
+def viewcourses(request):
+    courses = Courses.objects.all()
+    return render(request, "viewcourses.html", {'userdata': courses})
