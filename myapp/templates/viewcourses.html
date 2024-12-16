@@ -12,7 +12,7 @@ Courses
             <tr>
                 <th>ID</th>
                 <th>Course</th>
-                <th>Actions</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -21,7 +21,7 @@ Courses
                 <td>{{ us.id }}</td>
                 <td>{{ us.course_name }}</td>
                 <td>
-                    <a href="/deletecourse/{{ us.id }}"> Delete </a>
+                    <a href="/deletecourse/{{ us.id }}"> Remove </a>
                 </td>
             </tr>
         {% endfor %}
