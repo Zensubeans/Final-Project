@@ -36,5 +36,7 @@ urlpatterns = [
     path('viewusers', HodViews.viewusers),
     path('viewcourses', HodViews.viewcourses),
     path('deleteprofile/<int:id>', HodViews.deleteprofile),
-    path('deletecourse/<int:id>', HodViews.deletecourse)
+    path('deletecourse/<int:id>', HodViews.deletecourse),
+    path('editprofile/<int:id>', HodViews.editprofile),
+    path('updateprofile/<int:id>', HodViews.updateprofile)
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

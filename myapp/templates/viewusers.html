@@ -14,7 +14,6 @@ Students
                 <th>Name</th>
                 <th>Email</th>
                 <th>Device</th>
-                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -26,6 +25,9 @@ Students
                 <td>{{ us.device }}</td>
                 <td>
                     <a href="/deleteprofile/{{ us.id }}"> Delete </a>
+                </td>
+                <td>
+                    <a href="/editprofile/{{ us.id }}"> Edit </a>
                 </td>
             </tr>
         {% endfor %}

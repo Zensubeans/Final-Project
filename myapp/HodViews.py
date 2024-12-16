@@ -60,3 +60,20 @@ def deletecourse(request, id):
     us = Courses.objects.get(id=id)
     us.delete()
     return redirect("/viewcourses")
+
+def editprofile(request, id):
+    user = Users.objects.get(id=id)
+    return render(request, "editprofile.html", {'us':user})
+
+def updateprofile(request, id):
+    newname = request.POST['name']
+    newemail = request.POST['email']
+    newpassword = request.POST['password']
+    newdevice = request.POST['device']
+    us = Users.objects.get(id=id)
+    us.name = newname
+    us.email = newemail
+    us.password = newpassword
+    us.device = newdevice
+    us.save()
+    return redirect("/viewusers")
