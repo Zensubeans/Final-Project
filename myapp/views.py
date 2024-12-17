@@ -31,3 +31,6 @@ def logout_user(request):
 
 def register(request):
     return render(request, "registration.html")
+
+def userlog(request):
+    return render(request, "studentlogin.html")

@@ -1,0 +1,28 @@
+{% extends 'user_template/base.html' %}
+{% block page_title %}
+Courses
+{% endblock page_title %}
+{% block main_content %}
+{% load static %}
+<html>
+    <body>
+        <center>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Course</th>
+            
+            </tr>
+            </thead>
+            <tbody>
+        {% for us in userdata %}
+            <tr>
+                <td>{{ us.id }}</td>
+                <td>{{ us.course_name }}</td>
+            </tr>
+        {% endfor %}
+            </tbody>
+        </table> </center>
+</html>
+{% endblock main_content %}

@@ -30,7 +30,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to Scanner Attendance</p>
 
-      <form action="/doLogin" method="post">
+      <form action="/userlog" method="post">
         {% csrf_token %}
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">
@@ -79,9 +79,6 @@
 </div>
 <div class="center-link"> 
   <a href='/register' method="post">Register</a>
-</div>
-<div class="center-link"> 
-  <a href='/user_home' method="post">Student Login</a>
 </div>
 <!-- /.login-box -->
 

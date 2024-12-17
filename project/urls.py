@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from project import settings
 from django.conf.urls.static import static
-from myapp import HodViews, views
+from myapp import HodViews, views, userviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,5 +38,11 @@ urlpatterns = [
     path('deleteprofile/<int:id>', HodViews.deleteprofile),
     path('deletecourse/<int:id>', HodViews.deletecourse),
     path('editprofile/<int:id>', HodViews.editprofile),
-    path('updateprofile/<int:id>', HodViews.updateprofile)
+    path('updateprofile/<int:id>', HodViews.updateprofile),
+    path('userlog', views.userlog, name='userlog'),
+
+    path('user_home', userviews.user_home, name="user_home"),
+    path('scan', userviews.scan, name="scan"),
+    path('userviewstudents', userviews.userviewstudents, name='userviewstudents'),
+    path('userviewcourses', userviews.userviewcourses, name='userviewcourses'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
